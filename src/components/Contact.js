@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef} from "react";
 
 function Contact() {
   return (
@@ -13,7 +13,7 @@ function Contact() {
           <div className="divider-custom">
             <div className="divider-custom-line"></div>
             <div className="divider-custom-icon">
-              <i className="fas fa-star"></i>
+              <i className="fas fa-code"></i>
             </div>
             <div className="divider-custom-line"></div>
           </div>
@@ -92,7 +92,7 @@ function Contact() {
                     id="message"
                     type="text"
                     placeholder="Enter your message here..."
-                    style="height: 10rem"
+                    style={{ height: "10rem" }}
                     data-sb-validations="required"
                   ></textarea>
                   <label htmlFor="message">Message</label>
