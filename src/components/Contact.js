@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "react-bootstrap/Alert";
+import Spinner from "react-bootstrap/Spinner";
 
 function Contact() {
   const form = useRef();
@@ -10,8 +11,10 @@ function Contact() {
     msg: "",
     variant: "",
   });
+  const [wasEmailSendClicked, setWasEmailSendClicked] = useState(false);
 
   const sendEmail = (e) => {
+    setWasEmailSendClicked(true);
     e.preventDefault();
     emailjs
       .sendForm(
@@ -108,12 +111,20 @@ function Contact() {
                   <Alert.Heading>{alertAttributes.title}</Alert.Heading>
                   <p>{alertAttributes.msg}</p>
                 </Alert>
+              ) : (
+                wasEmailSendClicked && (
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Sending...</span>
+                  </Spinner>
+                )
+              )}
+              {wasEmailSendClicked === false ? (
+                <input
+                  className="btn btn-primary btn-xl"
+                  type="submit"
+                  value="Send"
+                />
               ) : null}
-              <input
-                className="btn btn-primary btn-xl"
-                type="submit"
-                value="Send"
-              />
             </form>
           </div>
         </div>
