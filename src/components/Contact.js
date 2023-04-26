@@ -1,141 +1,120 @@
-import React, { useRef} from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Alert from "react-bootstrap/Alert";
 
 function Contact() {
+  const form = useRef();
+  const [alertAttributes, setAlertAttributes] = useState({
+    visible: false,
+    title: "",
+    msg: "",
+    variant: "",
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_xpsdc4b",
+        "template_e1f34gj",
+        form.current,
+        process.env.REACT_APP_EMAIL_JS_KEY
+      )
+      .then(
+        () => {
+          setAlertAttributes({
+            visible: true,
+            title: "Successfully sent email",
+            msg: "Emailed kacasey@berkeley.edu",
+            variant: "success",
+          });
+        },
+        (error) => {
+          setAlertAttributes({
+            visible: true,
+            title: "Failed to send email",
+            msg: `See error ${error.text} and email kacasey@berkeley.edu`,
+            variant: "danger",
+          });
+        }
+      );
+  };
   return (
     <div>
       <section className="page-section" id="contact">
-        <div className="container">
-          {/* Contact Section Heading*/}
-          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
-            Contact Me
-          </h2>
-          {/* Icon Divider*/}
-          <div className="divider-custom">
-            <div className="divider-custom-line"></div>
-            <div className="divider-custom-icon">
-              <i className="fas fa-code"></i>
-            </div>
-            <div className="divider-custom-line"></div>
+        <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
+          Contact Me
+        </h2>
+        {/* Icon Divider*/}
+        <div className="divider-custom">
+          <div className="divider-custom-line"></div>
+          <div className="divider-custom-icon">
+            <i className="fas fa-code"></i>
           </div>
-          {/* Contact Section Form*/}
-          <div className="row justify-content-center">
-            <div className="col-lg-8 col-xl-7">
-              {/* * * * * * * * * * * * * * * **/}
-              {/* * * SB Forms Contact Form * **/}
-              {/* * * * * * * * * * * * * * * **/}
-              {/* This form is pre-integrated with SB Forms.*/}
-              {/* To make this form functional, sign up at*/}
-              {/* https://startbootstrap.com/solution/contact-forms*/}
-              {/* to get an API token!*/}
-              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                {/* Name input*/}
-                <div className="form-floating mb-3">
-                  <input
-                    className="form-control"
-                    id="name"
-                    type="text"
-                    placeholder="Enter your name..."
-                    data-sb-validations="required"
-                  />
-                  <label htmlFor="name">Full name</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="name:required"
-                  >
-                    A name is required.
-                  </div>
-                </div>
-                {/* Email address input*/}
-                <div className="form-floating mb-3">
-                  <input
-                    className="form-control"
-                    id="email"
-                    type="email"
-                    placeholder="name@example.com"
-                    data-sb-validations="required,email"
-                  />
-                  <label htmlFor="email">Email address</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="email:required"
-                  >
-                    An email is required.
-                  </div>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="email:email"
-                  >
-                    Email is not valid.
-                  </div>
-                </div>
-                {/* Phone number input*/}
-                <div className="form-floating mb-3">
-                  <input
-                    className="form-control"
-                    id="phone"
-                    type="tel"
-                    placeholder="(123) 456-7890"
-                    data-sb-validations="required"
-                  />
-                  <label htmlFor="phone">Phone number</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="phone:required"
-                  >
-                    A phone number is required.
-                  </div>
-                </div>
-                {/* Message input*/}
-                <div className="form-floating mb-3">
-                  <textarea
-                    className="form-control"
-                    id="message"
-                    type="text"
-                    placeholder="Enter your message here..."
-                    style={{ height: "10rem" }}
-                    data-sb-validations="required"
-                  ></textarea>
-                  <label htmlFor="message">Message</label>
-                  <div
-                    className="invalid-feedback"
-                    data-sb-feedback="message:required"
-                  >
-                    A message is required.
-                  </div>
-                </div>
-                {/* Submit success message*/}
-                {/**/}
-                {/* This is what your users will see when the form*/}
-                {/* has successfully submitted*/}
-                <div className="d-none" id="submitSuccessMessage">
-                  <div className="text-center mb-3">
-                    <div className="fw-bolder">Form submission successful!</div>
-                    To activate this form, sign up at
-                    <br />
-                    <a href="https://startbootstrap.com/solution/contact-forms">
-                      https://startbootstrap.com/solution/contact-forms
-                    </a>
-                  </div>
-                </div>
-                {/* Submit error message*/}
-                {/**/}
-                {/* This is what your users will see when there is*/}
-                {/* an error submitting the form*/}
-                <div className="d-none" id="submitErrorMessage">
-                  <div className="text-center text-danger mb-3">
-                    Error sending message!
-                  </div>
-                </div>
-                {/* Submit Button*/}
-                <button
-                  className="btn btn-primary btn-xl disabled"
-                  id="submitButton"
-                  type="submit"
+          <div className="divider-custom-line"></div>
+        </div>
+        <div className="d-flex align-items-center flex-column">
+          <div>
+            Email me at{" "}
+            <a href="mailto:kacasey@berkeley.edu">kacasey@berkeley.edu</a> or
+            fill out the following form to get in touch.
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-lg-8 col-xl-7">
+            <form ref={form} onSubmit={sendEmail}>
+              <div className="form-floating mb-3">
+                <input
+                  className="form-control"
+                  id="from_name"
+                  name="from_name"
+                  type="text"
+                  placeholder="Enter your name..."
+                  required={true}
+                />
+                <label htmlFor="from_name">Full name</label>
+              </div>
+              <div className="form-floating mb-3">
+                <input
+                  className="form-control"
+                  id="reply_to"
+                  name="reply_to"
+                  type="email"
+                  placeholder="name@example.com"
+                  required={true}
+                />
+                <label htmlFor="email">Email address</label>
+              </div>
+              <div className="form-floating mb-3">
+                <textarea
+                  className="form-control"
+                  id="message"
+                  name="message"
+                  type="text"
+                  placeholder="Enter your message here..."
+                  style={{ height: "10rem" }}
+                  required={true}
+                ></textarea>
+                <label htmlFor="message">Message</label>
+              </div>
+              {alertAttributes.visible ? (
+                <Alert
+                  variant={alertAttributes.variant}
+                  onClose={() =>
+                    setAlertAttributes({ ...alertAttributes, visible: false })
+                  }
+                  dismissible
                 >
-                  Send
-                </button>
-              </form>
-            </div>
+                  <Alert.Heading>{alertAttributes.title}</Alert.Heading>
+                  <p>{alertAttributes.msg}</p>
+                </Alert>
+              ) : null}
+              <input
+                className="btn btn-primary btn-xl"
+                type="submit"
+                value="Send"
+              />
+            </form>
           </div>
         </div>
       </section>

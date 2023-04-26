@@ -10836,8 +10836,17 @@ html {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding-top: calc(6rem + 74px);
+  padding-bottom: 6rem;
 }
+
+@media (min-width: 992px) {
+  .page-section {
+    padding-top: calc(6rem + 104px);
+    padding-bottom: 6rem;
+  }
+}
+
 .page-section .page-section-heading {
   font-size: 2.25rem;
   line-height: 2rem;
