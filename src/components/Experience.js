@@ -1,49 +1,23 @@
 import React from "react";
 
+import {
+  getHackathonsData,
+  getSchoolProjectsData,
+  getSchoolCompetitionsData,
+  getPersonalProjectsData,
+} from "../data/getProjectsData";
+import Project from "./Project";
+import TableOfContentsLink from "./TableOfContentsLink";
+
 function Experience() {
   const Headings = ({ headings, activeId }) => (
     <ul>
       {headings.map((heading) => (
-        <li
+        <TableOfContentsLink
           key={heading.id}
-          className={heading.id === activeId ? "active" : ""}
-        >
-          <a
-            href={`#${heading.id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector(`#${heading.id}`).scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-            className="toc-link"
-          >
-            {heading.title}
-          </a>
-          {heading.items.length > 0 && (
-            <ul>
-              {heading.items.map((child) => (
-                <li
-                  key={child.id}
-                  className={child.id === activeId ? "active" : ""}
-                >
-                  <a
-                    className="toc-link"
-                    href={`#${child.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.querySelector(`#${child.id}`).scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }}
-                  >
-                    {child.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
+          heading={heading}
+          activeId={activeId}
+        />
       ))}
     </ul>
   );
@@ -71,6 +45,18 @@ function Experience() {
         nestedHeadings.push({ id, title, items: [] });
       } else if (heading.nodeName === "H2" && nestedHeadings.length > 0) {
         nestedHeadings[nestedHeadings.length - 1].items.push({
+          id,
+          title,
+          items: [],
+        });
+      } else if (
+        heading.nodeName === "H3" &&
+        nestedHeadings.length > 0 &&
+        nestedHeadings[nestedHeadings.length - 1].items.length > 0
+      ) {
+        const h1Ref = nestedHeadings[nestedHeadings.length - 1];
+        const h2Ref = h1Ref.items[h1Ref.items.length - 1];
+        h2Ref.items.push({
           id,
           title,
         });
@@ -139,18 +125,7 @@ function Experience() {
 
   return (
     <div>
-      <section className="page-section" id="experience">
-        <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
-          Experience
-        </h2>
-        {/* Icon Divider*/}
-        <div className="divider-custom">
-          <div className="divider-custom-line"></div>
-          <div className="divider-custom-icon">
-            <i className="fas fa-code"></i>
-          </div>
-          <div className="divider-custom-line"></div>
-        </div>
+      <section className="experience-nav-padding" id="experience">
         <div className="d-flex w-100 justify-content-center align-items-center">
           <div id="experience_table">
             <div>
@@ -181,22 +156,72 @@ function Experience() {
               </p>
               <ul>
                 <li>
-                  <b>2020 H2</b> (Python/C++ Android Unwinding) I added OS 9
-                  stack unwinding for 32 and 64 bit android phones on the{" "}
-                  <a
-                    href="https://github.com/facebookincubator/profilo"
-                    target="_blank"
-                  >
-                    profilo
-                  </a>
-                  . This project was cool because it was basically re-using the
-                  AOSP code for stack unwinding except dropping the locks and
-                  making it more performant so that it could be used in a
-                  production environment instead of solely in a test
-                  environment. It used python for finding the address of
-                  particular functions, and while other teammates had
-                  implemented the OS 6, 7, and 8 versions, I was the one to add
-                  OS 9.
+                  <b>2023 H1</b> (React, GraphQL) In my last half at Meta, I
+                  worked on an idea where services would be scored based on a
+                  given list of metrics. Incorporating
+                </li>
+                <li>
+                  <b>2022 H2</b> (React, GraphQL) I led the design and
+                  development of allowing our customers to add new metrics into
+                  Production Matrix. Primarily this consisted of building a UI
+                  in React to explain the various concepts and guide them on
+                  track to building more metrics. With this we doubled our
+                  metrics and our users, ending up at 100 metrics and 500 MAU.
+                </li>
+                <li>
+                  <img
+                    alt="..."
+                    style={{ width: 175, height: 100, float: "right" }}
+                    src="assets/img/experience/matrix_view.png"
+                  />
+                  <b>2022 H1</b> (React, GraphQL, SQL) Continuing on Production
+                  Matrix I developed a Matrix (Table) visualization to see
+                  multiple metrics simultaneously, the can be seen on the
+                  visualization on the right. If more filled in circles means
+                  higher progress, then one could quickly conclude that Alice
+                  and Cathy are doing well and that Metric C is doing well.
+                  Additionally I worked on some tricky SQL to calculate what
+                  would happen dynamically if we wanted to remove particular
+                  employees from the calculation (e.g. if they brought in
+                  incorrect data).
+                </li>
+                <li>
+                  <b>2021 H2</b> (React, GraphQL, Python) I worked on a
+                  different internal tool called Production Matrix (PMX). This
+                  tool was primarily an optimized dashboard, featuring python
+                  data processing into a more optimized database that could be
+                  queried from a UI via Presto SQL. The team was part of the
+                  Core Systems UI org, but we worked most closely with the org
+                  Reliability Engineering. This team tracked very simple
+                  Reliability metrics that typically boiled down to are you
+                  doing this particular best practice or not. Such as % Alerts
+                  Detected by Automation, % Mutations that used a Canary, the
+                  goal of these two simply being to avoid instances that failed
+                  this check and therefore increase the % in a particular time
+                  range such as 1 month to a desired goal. The main technology
+                  that PMX provided was assigning ownership - for example how
+                  would you know whether a particular Alert was the Traffic
+                  Org's responsibility or not? The solution is that Traffic
+                  could be represented by the VP of Traffic, and those ~500
+                  employees reporting to that VP would be involved in various
+                  Oncall Rotations. If the alert fired against one of those
+                  Oncall Rotations, then it counted for Traffic, otherwise it
+                  doesn't count. For this first half I implemented 5 new metrics
+                  by driving consensus being different reliability experts.
+                </li>
+                <li>
+                  <b>2021 H1</b> (Python) Applied automatic insights to "Mobile
+                  Lab" data, featuring custom regex expressions to extract from
+                  log files.
+                </li>
+                <li>
+                  <b>2020 H2</b> (PHP, Compression) Performance data was being
+                  collected from "Mobile Lab" which is basically test devices
+                  that could deterministically replay scenarios. However the
+                  callstacks data in these traces was too big, so I implemented
+                  a compression scheme of string de-duplication by storing a
+                  lookup table that minimizes the size of the trace. Now we
+                  could reliabily see Lab data in Comparison View.
                 </li>
                 <li>
                   <b>2020 H1</b> (Python/C++ Android Unwinding) I added OS 9
@@ -204,13 +229,14 @@ function Experience() {
                   <a
                     href="https://github.com/facebookincubator/profilo"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     profilo
                   </a>
-                  . This project was cool because it was basically re-using the
-                  AOSP code for stack unwinding except dropping the locks and
-                  making it more performant so that it could be used in a
-                  production environment instead of solely in a test
+                  . This project was interesting because it was basically
+                  re-using the AOSP code for stack unwinding except dropping the
+                  locks and making it more performant so that it could be used
+                  in a production environment instead of solely in a test
                   environment. It used python for finding the address of
                   particular functions, and while other teammates had
                   implemented the OS 6, 7, and 8 versions, I was the one to add
@@ -233,6 +259,7 @@ function Experience() {
                 </li>
                 <li>
                   <img
+                    alt="..."
                     style={{ width: 250, height: 100, float: "right" }}
                     src="assets/img/experience/breakdown.png"
                   />
@@ -259,11 +286,12 @@ function Experience() {
                   <a
                     href="https://atscaleconference.com/systems-scale-2019-new-york-recap/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     here
                   </a>
-                  . Find it by searching for "A tale of two performance analysis
-                  tools".
+                  . Find it by searching for the video for "A tale of two
+                  performance analysis tools".
                 </li>
                 <li>
                   <b>2018 H2</b> (SQL, React) As Comparison View grew 7x to 500
@@ -284,6 +312,7 @@ function Experience() {
                 </li>
                 <li>
                   <img
+                    alt="..."
                     style={{ width: 250, height: 125, float: "right" }}
                     src="assets/img/experience/dynamic_sample_rate.png"
                   />
@@ -339,6 +368,7 @@ function Experience() {
                 </li>
                 <li>
                   <img
+                    alt="..."
                     style={{ width: 250, height: 300, float: "right" }}
                     src="assets/img/experience/basic_call_graph.png"
                   />
@@ -349,6 +379,7 @@ function Experience() {
                   <a
                     href="https://patents.google.com/patent/US10365905B1/en?oq=10365905"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     10365905
                   </a>
@@ -378,6 +409,7 @@ function Experience() {
                   <a
                     href="https://github.com/facebookincubator/profilo"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     profilo
                   </a>{" "}
@@ -439,15 +471,21 @@ function Experience() {
                 <a
                   href="https://github.com/Fortisque/option_wheel_tracker"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Github
                 </a>{" "}
-                <a href="https://optionwheel.fly.dev/" target="_blank">
+                <a
+                  href="https://optionwheel.fly.dev/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Live Site
                 </a>
               </b>
               <p>
                 <img
+                  alt="..."
                   style={{ width: 250, height: 150, float: "right" }}
                   src="assets/img/experience/option_wheel_tracker.png"
                 />
@@ -470,11 +508,19 @@ function Experience() {
                 (Ruby on Rails, Python scrapy) I had collected numerous Magic
                 The Gathering playing cards and wished to sell them. I used the
                 python library scrapy to scrape prices from{" "}
-                <a href="https://www.tcgplayer.com/" target="_blank">
+                <a
+                  href="https://www.tcgplayer.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   TCGPlayer
                 </a>
                 , a local Berekley store named Eudomonia,{" "}
-                <a href="https://www.mtggoldfish.com/" target="_blank">
+                <a
+                  href="https://www.mtggoldfish.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   MTG Goldfish
                 </a>{" "}
                 and Pucatrade. I used a cron job on an Amazon EC2 instance to
@@ -495,11 +541,27 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="hackathons">
                 Hackathons
               </h2>
-              <p>ToDo</p>
+              {getHackathonsData().map((project) => (
+                <Project project={project} key={project.name} />
+              ))}
               <h2 className="mt-3 pt-3" id="school-competitions">
                 School Competitions
               </h2>
-              <p>ToDo</p>
+              {getSchoolCompetitionsData().map((project) => (
+                <Project project={project} key={project.name} />
+              ))}
+              <h2 className="mt-3 pt-3" id="personal-projects">
+                Personal Projects
+              </h2>
+              {getPersonalProjectsData().map((project) => (
+                <Project project={project} key={project.name} />
+              ))}
+              <h2 className="mt-3 pt-3" id="school-projects">
+                School Projects
+              </h2>
+              {getSchoolProjectsData().map((project) => (
+                <Project project={project} key={project.name} />
+              ))}
             </div>
           </div>
           <TableOfContents />

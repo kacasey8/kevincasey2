@@ -11173,13 +11173,21 @@ html {
 }
 
 .page-section {
-  padding-top: calc(6rem + 24px);
+  padding-top: calc(6rem + 34px);
+  padding-bottom: 6rem;
+}
+.experience-nav-padding {
+  padding-top: calc(6rem + 4px);
   padding-bottom: 6rem;
 }
 
 @media (min-width: 992px) {
   .page-section {
     padding-top: calc(6rem + 54px);
+    padding-bottom: 6rem;
+  }
+  .experience-nav-padding {
+    padding-top: calc(6rem + 24px);
     padding-bottom: 6rem;
   }
 }
