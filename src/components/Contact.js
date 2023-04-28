@@ -65,6 +65,13 @@ function Contact() {
         </div>
         <div className="row justify-content-center">
           <div className="col-lg-8 col-xl-7">
+            <div className="d-flex flex-row gap-2 justify-content-center">
+              <div>Other Profiles:</div>
+              <a href="http://github.com/Fortisque">Github</a>
+              <a href="https://www.linkedin.com/profile/view?id=205206080">
+                Linkedin
+              </a>
+            </div>
             <form ref={form} onSubmit={sendEmail}>
               <div className="form-floating mb-3">
                 <input
