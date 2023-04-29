@@ -39,4 +39,4 @@ FROM base
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
-CMD [ "npm", "run", "start" ]
+CMD [ "node", "--max-old-space-size=192", "server.js" ]
