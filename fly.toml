@@ -14,3 +14,6 @@ primary_region = "lax"
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
