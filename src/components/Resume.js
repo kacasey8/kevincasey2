@@ -25,12 +25,17 @@ function Resume() {
         >
           Download
         </a>
-        <iframe
-          src="https://docs.google.com/gview?url=https://kacasey.me/assets/kevincaseyresume_2023.pdf&embedded=true"
-          style={{ width: "100%", maxWidth: "1100px", flexGrow: 1 }}
-          frameborder="0"
-          title="kevincaseyresume"
-        ></iframe>
+        <a
+          href="https://docs.google.com/viewerng/viewer?url=https://kacasey.me/assets/kevincaseyresume_2023.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            alt="..."
+            style={{ width: 850, height: 1100 }}
+            src="assets/kevincaseyresume_2023.png"
+          />
+        </a>
       </div>
     </section>
   );
