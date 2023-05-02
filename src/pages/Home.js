@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import HomeContent from "../components/HomeContent";
 import NavBar from "../components/NavBar";
+import Resume from "../components/Resume";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Routes>
         <Route path="/" element={<HomeContent />}></Route>
         <Route path="/experience" element={<Experience />}></Route>
+        <Route path="/resume" element={<Resume />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </>
