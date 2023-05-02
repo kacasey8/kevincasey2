@@ -31,11 +31,11 @@ function Header() {
         >
           <div>Thank you for visiting my portfolio website.</div>
           <div style={{ maxWidth: 700 }}>
-            As of April 2023 I am currently looking for new Software Engineering
-            job opportunities either fully remote or close enough to Rancho
+            I am currently looking for new Software Engineering job
+            opportunities either fully remote or close enough to Rancho
             Cucamonga, California (e.g. Irvine or Pasadena).
           </div>
-          <div>I'm was at Facebook (Meta) for a little under 7 years.</div>
+          <div>I'm at Facebook (Meta) for a little under 7 years.</div>
           <Nav.Link href="/experience">
             <button className="btn btn-secondary">Learn More</button>
           </Nav.Link>
