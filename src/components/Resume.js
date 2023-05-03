@@ -32,7 +32,7 @@ function Resume() {
         >
           <img
             alt="..."
-            style={{ width: 850, height: 1100 }}
+            id="resume-img"
             src="assets/kevincaseyresume_2023.png"
           />
         </a>
