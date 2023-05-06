@@ -137,19 +137,19 @@ function Experience() {
               </h2>
               June 2016 - Present
               <p>
-                I've been working on Internal Tools at Facebook (Meta) for
-                almost 7 years. I spent the first 5 years in Mobile Performance
-                (some Android, mostly web full stack), and the last 2 in a web
-                full stack role for Reliability Metrics. I became a Senior
-                Software Engineer (E5) in 2019, and mentored a total of 3 summer
-                interns and 6 new hires during my tenure. I typically worked on
-                1-3 month long projects, needing very little guidance after I
-                became more senior. I'd research needs from customers (aka
-                facebook employees) in order for them to accomplish their goals
-                of tracking or moving particular metrics and work with a
-                designer when available. While I worked primarily as a full
-                stack web developer in React, GraphQL, SQL, Python, CSS and PHP,
-                I also spent some time writing Android (Java/C++) and iOS
+                I've been working on Internal Tools at Facebook (Meta) 7 years.
+                I spent the first 5 years in Mobile Performance (some Android,
+                mostly web full stack), and the last 2 in a web full stack role
+                for Reliability Metrics. I became a Senior Software Engineer
+                (E5) in 2019, and mentored a total of 3 summer interns and 6 new
+                hires during my tenure. I typically worked on 1-3 month long
+                projects, needing very little guidance after I became more
+                senior. I'd research needs from customers (aka facebook
+                employees) in order for them to accomplish their goals of
+                tracking or moving particular metrics and work with a designer
+                when available. While I worked primarily as a full stack web
+                developer in React, GraphQL, SQL, Python, CSS and PHP, I also
+                spent some time writing Android (Java/C++) and iOS
                 (Objective-C). While this is quite long as I worked on numerous
                 projects over the years, I'll describe in more detail what I
                 did.
