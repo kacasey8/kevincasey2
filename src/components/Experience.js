@@ -156,9 +156,11 @@ function Experience() {
               </p>
               <ul>
                 <li>
-                  <b>2023 H1</b> (React, GraphQL) In my last half at Meta, I
-                  worked on an idea where services would be scored based on a
-                  given list of metrics. Incorporating
+                  <b>2023 H1</b> (React, GraphQL) I worked on an idea where
+                  services would be scored overall based on a given list of
+                  metrics. This incorporated a twist on the Matrix, as each
+                  service should be scored as either the MIN or AVG of its
+                  underlying scores.
                 </li>
                 <li>
                   <b>2022 H2</b> (React, GraphQL) I led the design and
