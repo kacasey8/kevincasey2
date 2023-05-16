@@ -35,7 +35,7 @@ function Header() {
             opportunities either fully remote or close enough to Rancho
             Cucamonga, California (e.g. Irvine or Pasadena).
           </div>
-          <div>I'm been at Facebook (Meta) for 7 years.</div>
+          <div>I've been at Facebook (Meta) for 7 years.</div>
           <Nav.Link href="/experience">
             <button className="btn btn-secondary">Learn More</button>
           </Nav.Link>
