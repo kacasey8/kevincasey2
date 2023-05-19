@@ -68,7 +68,7 @@ function Contact() {
             <div className="d-flex flex-row gap-2 justify-content-center">
               <div>Other Profiles:</div>
               <a href="http://github.com/Fortisque">Github</a>
-              <a href="https://www.linkedin.com/profile/view?id=205206080">
+              <a href="https://www.linkedin.com/in/kevin-casey-62888158/">
                 Linkedin
               </a>
             </div>
