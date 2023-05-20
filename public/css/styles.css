@@ -11456,13 +11456,13 @@ li.active > a {
   width: 25%;
 }
 
-#resume-img {
+.resume-img {
   width: 850px;
   height: 1100px;
 }
 
 @media (max-width: 850px) {
-  #resume-img {
+  .resume-img {
     width: 100%;
     height: auto;
   }
