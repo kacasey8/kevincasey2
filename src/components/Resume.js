@@ -51,22 +51,11 @@ function Resume() {
         <a
           className="btn btn-primary btn-xl mb-4"
           download="kevincasey2023"
-          href="assets/kevincaseyresume_2023.pdf"
+          href="assets/kevincaseyresume_may_2023.pdf"
         >
           Download
         </a>
-        {/* <a
-          href="https://docs.google.com/viewerng/viewer?url=https://kacasey.me/assets/kevincaseyresume_2023.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            alt="..."
-            id="resume-img"
-            src="assets/kevincaseyresume_2023.png"
-          />
-        </a> */}
-        <Document file="/assets/kevincaseyresume_2023.pdf">
+        <Document file="/assets/kevincaseyresume_may_2023.pdf">
           <Page
             pageNumber={1}
             renderTextLayer={false}
