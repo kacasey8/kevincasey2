@@ -133,11 +133,11 @@ function Experience() {
                 Work Experience
               </h1>
               <h2 className="mt-3 pt-3" id="meta">
-                Meta (2016-Present)
+                Meta (2016-2023)
               </h2>
-              June 2016 - Present
+              June 2016 - June 2023
               <p>
-                I've been working on Internal Tools at Facebook (Meta) 7 years.
+                I worked on Internal Tools at Facebook (Meta) 7 years.
                 I spent the first 5 years in Mobile Performance (some Android,
                 mostly web full stack), and the last 2 in a web full stack role
                 for Reliability Metrics. I became a Senior Software Engineer
