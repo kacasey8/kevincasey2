@@ -50,7 +50,7 @@ function Resume() {
       >
         <a
           className="btn btn-primary btn-xl mb-4"
-          download="kevincasey2023"
+          download="kevincasey_2024"
           href="assets/kevincaseyresume_2024.pdf"
         >
           Download
