@@ -5,7 +5,7 @@ function Project(props) {
   return (
     <>
       <h3 id={project.name.replaceAll(" ", "_")}>{project.name}</h3>
-      {project.timeframe}
+      <b>{project.timeframe}</b>
       <p>
         {project.image_src != null && (
           <img

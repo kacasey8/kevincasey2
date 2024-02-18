@@ -133,26 +133,67 @@ function Experience() {
                 Work Experience
               </h1>
               <h2 className="mt-3 pt-3" id="meta">
+                Snackpass (2023 - Present)
+              </h2>
+              <b>July 2023 - Present (Node, React Native, React, MongoDB)</b>
+              <p>
+                Snackpass is a Series B startup, providing technology for Quick
+                Serve Restaurants. At Snackpass I'm driving projects that grow
+                and retain the number of parner stores that Snackpass works
+                with. This included working on Gift Cards, fraud prevention, and
+                SMS Campaignss
+              </p>
+              <ul>
+                <li>
+                  <b>2024 H1 (in progress)</b>
+                  <ul>
+                    <li>
+                      I designed the end to end system of stores being able to
+                      send text message campaigns, from working closely with
+                      Twilio APIs and adhering with A2P brand compliance, to
+                      collecting consent from our kiosk devices, and to internal
+                      partner UIs that clearly explained the cost of the
+                      campaigns and what text messages would be sent.
+                    </li>
+                    <li>
+                      I revamped the Digital Gift Card experience, allowing
+                      digital gift cards to be purchased in conjuction with
+                      other food items and handling payouts appropriately.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>2023 H2</b> I designed the end to end system of how
+                  Physical Gift Cards would work for our partners, from the
+                  React Native UI to buy them, to encrypting of the gift card
+                  codes for security, to tweaking our legacy payouts system to
+                  support paying out gift cards immediately. Definitely the most
+                  complex part of this was handling payouts, as some stores
+                  wished a single store to hold onto the funds and then based on
+                  where the gift cards are used provide support for displaying
+                  which stores were owed money
+                </li>
+              </ul>
+              <h2 className="mt-3 pt-3" id="meta">
                 Meta (2016-2023)
               </h2>
-              June 2016 - June 2023
+              <b>June 2016 - June 2023</b>
               <p>
-                I worked on Internal Tools at Facebook (Meta) 7 years.
-                I spent the first 5 years in Mobile Performance (some Android,
-                mostly web full stack), and the last 2 in a web full stack role
-                for Reliability Metrics. I became a Senior Software Engineer
-                (E5) in 2019, and mentored a total of 3 summer interns and 6 new
-                hires during my tenure. I typically worked on 1-3 month long
-                projects, needing very little guidance after I became more
-                senior. I'd research needs from customers (aka facebook
-                employees) in order for them to accomplish their goals of
-                tracking or moving particular metrics and work with a designer
-                when available. While I worked primarily as a full stack web
-                developer in React, GraphQL, SQL, Python, CSS and PHP, I also
-                spent some time writing Android (Java/C++) and iOS
-                (Objective-C). While this is quite long as I worked on numerous
-                projects over the years, I'll describe in more detail what I
-                did.
+                I worked on Internal Tools at Facebook (Meta) 7 years. I spent
+                the first 5 years in Mobile Performance (some Android, mostly
+                web full stack), and the last 2 in a web full stack role for
+                Reliability Metrics. I became a Senior Software Engineer (E5) in
+                2019, and mentored a total of 3 summer interns and 6 new hires
+                during my tenure. I typically worked on 1-3 month long projects,
+                needing very little guidance after I became more senior. I'd
+                research needs from customers (aka facebook employees) in order
+                for them to accomplish their goals of tracking or moving
+                particular metrics and work with a designer when available.
+                While I worked primarily as a full stack web developer in React,
+                GraphQL, SQL, Python, CSS and PHP, I also spent some time
+                writing Android (Java/C++) and iOS (Objective-C). While this is
+                quite long as I worked on numerous projects over the years, I'll
+                describe in more detail what I did.
               </p>
               <ul>
                 <li>
@@ -423,7 +464,7 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="facebook">
                 Facebook Internship
               </h2>
-              May 2015 - Aug 2015
+              <b>May 2015 - Aug 2015</b>
               <p>
                 (Objective-C) I worked on the iOS News Feed team, where my main
                 project (6 wks) was to improve the offline capabilities of table
@@ -438,7 +479,7 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="gsi">
                 Berkeley GSI
               </h2>
-              Aug 2014 - May 2015
+              <b>Aug 2014 - May 2015</b>
               <p>
                 I was a graduate student instructor at UC Berkeley for the class
                 CS169 (Software Engineering). I lead discussion sections, weekly
@@ -452,7 +493,7 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="godaddy">
                 GoDaddy Internship
               </h2>
-              Jun 2014 - Aug 2014
+              <b>Jun 2014 - Aug 2014</b>
               <p>
                 I did Web development for the Online Store product, built on
                 spree using Ruby on Rails, Jquery/Javascript, HTML. Most of the
@@ -467,7 +508,7 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="options">
                 Option Tracker
               </h2>
-              2021
+              <b>2021</b>
               <br />
               <b>
                 <a
@@ -505,7 +546,7 @@ function Experience() {
               <h2 className="mt-3 pt-3" id="eudo-price">
                 MTG Price Comparator
               </h2>
-              2016 - 2017
+              <b>2016 - 2017</b>
               <p>
                 (Ruby on Rails, Python scrapy) I had collected numerous Magic
                 The Gathering playing cards and wished to sell them. I used the

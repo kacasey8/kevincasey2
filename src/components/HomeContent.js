@@ -30,7 +30,10 @@ function Header() {
           style={{ display: "flex", flexDirection: "column", gap: 8 }}
         >
           <div>Thank you for visiting my portfolio website.</div>
-          <div>I was at Facebook (Meta) for 7 years, and recently decided to join Snackpass (July 2023)</div>
+          <div>
+            I was at Facebook (Meta) for 7 years, and currently work at
+            Snackpass (since July 2023)
+          </div>
           <Nav.Link href="/experience">
             <button className="btn btn-secondary">Learn More</button>
           </Nav.Link>
