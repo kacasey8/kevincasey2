@@ -31,8 +31,7 @@ function Header() {
         >
           <div>Thank you for visiting my portfolio website.</div>
           <div>
-            I was at Facebook (Meta) for 7 years, and currently work at
-            Snackpass (since July 2023)
+            I worked at (Meta) for 7 years, then worked at Snackpass for 1 year and am currently back at Meta
           </div>
           <Nav.Link href="/experience">
             <button className="btn btn-secondary">Learn More</button>

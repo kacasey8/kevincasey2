@@ -132,20 +132,59 @@ function Experience() {
               <h1 className="mt-3 pt-3" id="work">
                 Work Experience
               </h1>
-              <h2 className="mt-3 pt-3" id="meta">
-                Snackpass (2023 - Present)
+              <h2 className="mt-3 pt-3" id="meta2">
+                Meta (2024 - Present)
               </h2>
-              <b>July 2023 - Present (Node, React Native, React, MongoDB)</b>
+              <b>September 2024 - Present (C++, Hack)</b>
+              <p>
+                As part of the Whatsapp Business Messaging Foundation team, we support
+                the infrastracture to maintain the API that businesses use to send messages
+                over WhatsApp at scale https://developers.facebook.com/documentation/business-messaging/whatsapp/overview.
+                This ranges from scaling Storage, Throughput and Latency, to adding new features
+                on the platform
+              </p>
+              <ul>
+                <li>
+                  <b>2025 H2</b> I scaled our integrity efforts to detect and ban spam and scam.
+                  I also revamped our internal data access controls to reduce data leakage risks,
+                  this was done by proposing a new tool that suggests getting a temporary grant, and
+                  providing instructions for legal action if longer term access is required.
+                </li>
+                <li>
+                  <b>2025 H1</b> I added the ability for businesses to send <a
+                    href="https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/audio-messages"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    voice messages
+                  </a>, while also handling multiple urgent feature requests and ensuring that our API passed
+                  a System Audit with a 3rd party auditing company.
+                </li>
+                <li>
+                  <b>2024 H2</b> As part of my ramp up, I added thumbnail capabilities when sending <a
+                    href="https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/spm-templates"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    product messages
+                  </a>, while simultaneously managing artificial traffic load tests to ensure our platform could scale
+                  an additional 30% from 70K/s fleetwide to 100K/s.
+                </li>
+              </ul>
+              <h2 className="mt-3 pt-3" id="snackpass">
+                Snackpass (2023 - 2024)
+              </h2>
+              <b>July 2023 - August 2024 (Node, React Native, React, MongoDB)</b>
               <p>
                 Snackpass is a Series B startup, providing technology for Quick
-                Serve Restaurants. At Snackpass I'm driving projects that grow
+                Serve Restaurants. At Snackpass I drove projects that grow
                 and retain the number of parner stores that Snackpass works
                 with. This included working on Gift Cards, fraud prevention, and
                 SMS Campaignss
               </p>
               <ul>
                 <li>
-                  <b>2024 H1 (in progress)</b>
+                  <b>2024 H1</b>
                   <ul>
                     <li>
                       I designed the end to end system of stores being able to
