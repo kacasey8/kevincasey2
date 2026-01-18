@@ -139,7 +139,13 @@ function Experience() {
               <p>
                 As part of the Whatsapp Business Messaging Foundation team, we support
                 the infrastracture to maintain the API that businesses use to send messages
-                over WhatsApp at scale https://developers.facebook.com/documentation/business-messaging/whatsapp/overview.
+                over WhatsApp at scale, called <a
+                  href="https://developers.facebook.com/documentation/business-messaging/whatsapp/overview"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  CloudAPI
+                </a>.
                 This ranges from scaling Storage, Throughput and Latency, to adding new features
                 on the platform
               </p>
