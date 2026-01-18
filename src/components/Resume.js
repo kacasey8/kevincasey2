@@ -51,11 +51,11 @@ function Resume() {
         <a
           className="btn btn-primary btn-xl mb-4"
           download="kevincasey_2024"
-          href="assets/kevincaseyresume_2024.pdf"
+          href="assets/kevincaseyresume_2025.pdf"
         >
           Download
         </a>
-        <Document file="/assets/kevincaseyresume_2024.pdf">
+        <Document file="/assets/kevincaseyresume_2025.pdf">
           <Page
             pageNumber={1}
             renderTextLayer={false}
